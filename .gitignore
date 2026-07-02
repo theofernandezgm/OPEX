@@ -1,0 +1,10 @@
+# Claude Code session config (dev preview server definition)
+.claude/
+
+# OS noise
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# AI source image (deployed copy lives in img/)
+studioimage.png

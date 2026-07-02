@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- OPEX wordmark mark: serif "O." — ink on warm bone, navy in dark mode -->
+  <style>
+    @media (prefers-color-scheme: dark) {
+      rect  { fill: #0F1A2B; }
+      text  { fill: #E9E5DA; }
+      tspan { fill: #9DB8DC; }
+    }
+  </style>
+  <rect width="64" height="64" fill="#F5F1E8"/>
+  <text x="32" y="48" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="46" fill="#1C1B19">O<tspan fill="#1F3A5F">.</tspan></text>
+</svg>

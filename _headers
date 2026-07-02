@@ -1,0 +1,26 @@
+# OPEX — security & caching headers (Netlify / Cloudflare Pages format).
+# On Apache hosting this file is ignored; .htaccess applies instead.
+# NOTE: if the inline <head> script in the HTML pages is ever edited,
+# the CSP sha256 hash below must be recomputed or theme/lang pre-paint breaks.
+
+/*
+  Content-Security-Policy: default-src 'none'; script-src 'self' 'sha256-17ekeved8SuEAbsHN1E8sdgsbnlMFjB3SE7M2EGbBIw='; style-src 'self'; font-src 'self'; img-src 'self'; connect-src https://api.web3forms.com; form-action 'self' https://api.web3forms.com; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Cross-Origin-Opener-Policy: same-origin
+  # Enable HSTS only after HTTPS has been live and stable on the final domain:
+  # Strict-Transport-Security: max-age=31536000; includeSubDomains
+
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/fonts.css
+  Cache-Control: public, max-age=86400
+
+/styles.css
+  Cache-Control: public, max-age=3600
+
+/main.js
+  Cache-Control: public, max-age=3600
