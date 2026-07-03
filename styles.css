@@ -1120,8 +1120,3 @@ em { font-style: italic; }
 /* photo variant of the imageslot: a real photograph instead of the duotone placeholder */
 .imageslot--photo .imageslot__art { opacity: 1; }
 .imageslot--photo .imageslot__art img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.imageslot--photo .imageslot__art::after {
-  /* quiet scrim so the caption stays legible over the photo */
-  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 30%;
-  background: linear-gradient(transparent, rgba(15,26,43,0.55));
-}
