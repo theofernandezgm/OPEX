@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contacto | OPEX</title>
+  <meta name="description" content="Cuéntanos qué necesitas. Te respondemos con una propuesta clara.">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta property="og:title" content="Contacto | OPEX">
+  <meta property="og:description" content="Cuéntanos qué necesitas. Te respondemos con una propuesta clara.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://www.opexxai.info/contacto">
+  <meta property="og:url" content="https://www.opexxai.info/contacto">
+  <link rel="preload" href="fonts/ibm-plex-sans-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="styles.css">
+  <script>(function(){try{var d=document.documentElement;var l=localStorage.getItem('opex-lang')||'es';d.setAttribute('data-lang',l);d.setAttribute('lang',l);}catch(e){}})();</script>
+</head>
+<body>
+  <a class="skip-link" href="#main"><span class="lang-es">Saltar al contenido</span><span class="lang-en">Skip to content</span></a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="logo" href="/" aria-label="OPEX, inicio">OPEX</a>
+      <nav class="main-nav" aria-label="Principal">
+        <ul class="main-nav__list">
+          <li><a href="/"><span class="lang-es">Inicio</span><span class="lang-en">Home</span></a></li>
+          <li><a href="/servicios"><span class="lang-es">Servicios</span><span class="lang-en">Services</span></a></li>
+          <li><a href="/metodo"><span class="lang-es">Método</span><span class="lang-en">Method</span></a></li>
+          <li><a href="/proceso"><span class="lang-es">Proceso</span><span class="lang-en">Process</span></a></li>
+          <li><a href="/nosotros"><span class="lang-es">Nosotros</span><span class="lang-en">About</span></a></li>
+          <li><a href="/contacto" class="is-active" aria-current="page"><span class="lang-es">Contacto</span><span class="lang-en">Contact</span></a></li>
+        </ul>
+      </nav>
+      <div class="site-header__actions">
+        <button class="lang-switch" data-lang-toggle type="button" aria-label="Switch to English">EN</button>
+        <a class="btn btn--primary btn--sm" href="/contacto"><span class="lang-es">Contactar</span><span class="lang-en">Contact us</span></a>
+        <button class="menu-toggle" type="button" aria-label="Menú" aria-expanded="false" aria-controls="mobile-nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Menú móvil">
+      <ul>
+        <li><a href="/"><span class="lang-es">Inicio</span><span class="lang-en">Home</span></a></li>
+        <li><a href="/servicios"><span class="lang-es">Servicios</span><span class="lang-en">Services</span></a></li>
+        <li><a href="/metodo"><span class="lang-es">Método</span><span class="lang-en">Method</span></a></li>
+        <li><a href="/proceso"><span class="lang-es">Proceso</span><span class="lang-en">Process</span></a></li>
+        <li><a href="/nosotros"><span class="lang-es">Nosotros</span><span class="lang-en">About</span></a></li>
+        <li><a href="/contacto" class="is-active" aria-current="page"><span class="lang-es">Contacto</span><span class="lang-en">Contact</span></a></li>
+      </ul>
+      <a class="btn btn--primary" href="/contacto"><span class="lang-es">Contactar</span><span class="lang-en">Contact us</span></a>
+      <button class="lang-switch" data-lang-toggle type="button" aria-label="Switch to English">EN</button>
+    </nav>
+  </header>
+
+  <main id="main">
+  <section class="page-header">
+    <div class="container">
+      <h1><span class="lang-es">Contacto</span><span class="lang-en">Contact</span></h1>
+      <p class="page-header__lead">
+        <span class="lang-es">Escríbenos y te respondemos con una propuesta clara. Si encaja, agendamos una primera conversación.</span>
+        <span class="lang-en">Write to us and we will reply with a clear proposal. If it fits, we will set up a first conversation.</span>
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact">
+        <div>
+          <div class="form__message form__message--success" role="status" aria-live="polite">
+            <span class="lang-es"><strong>Gracias.</strong> Hemos recibido tu mensaje y te responderemos pronto.</span>
+            <span class="lang-en"><strong>Thank you.</strong> We have received your message and will reply soon.</span>
+          </div>
+          <div class="form__message form__message--error" role="alert" aria-live="assertive">
+            <span class="lang-es">No hemos podido enviar el mensaje. Escríbenos directamente a <a href="mailto:info.opex@opexxai.info">info.opex@opexxai.info</a>.</span>
+            <span class="lang-en">We could not send your message. Please email us directly at <a href="mailto:info.opex@opexxai.info">info.opex@opexxai.info</a>.</span>
+          </div>
+          <form class="form" data-contact-form method="POST" action="https://api.web3forms.com/submit">
+            <input type="hidden" name="access_key" value="8244803a-a12f-4b85-80fe-f2d8cc5d3e20">
+            <input type="hidden" name="subject" value="Nuevo mensaje desde la web de OPEX">
+            <input type="hidden" name="from_name" value="Web OPEX">
+            <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <div class="form__field">
+              <label for="nombre"><span class="lang-es">Nombre</span><span class="lang-en">Name</span></label>
+              <input type="text" id="nombre" name="nombre" autocomplete="name" required
+                     data-ph-es="Tu nombre" data-ph-en="Your name" placeholder="Tu nombre">
+            </div>
+            <div class="form__field">
+              <label for="negocio"><span class="lang-es">Empresa</span><span class="lang-en">Company</span></label>
+              <input type="text" id="negocio" name="negocio" autocomplete="organization"
+                     data-ph-es="El nombre de tu empresa" data-ph-en="Your company name" placeholder="El nombre de tu empresa">
+            </div>
+            <div class="form__field">
+              <label for="email"><span class="lang-es">Email</span><span class="lang-en">Email</span></label>
+              <input type="email" id="email" name="email" autocomplete="email" required
+                     data-ph-es="Para poder responderte" data-ph-en="So we can reply" placeholder="Para poder responderte">
+            </div>
+            <div class="form__field">
+              <label for="mensaje"><span class="lang-es">Mensaje</span><span class="lang-en">Message</span></label>
+              <textarea id="mensaje" name="mensaje" rows="5" required
+                        data-ph-es="Cuéntanos un poco sobre tu negocio y qué te gustaría mejorar."
+                        data-ph-en="Tell us a little about your business and what you would like to improve."
+                        placeholder="Cuéntanos un poco sobre tu negocio y qué te gustaría mejorar."></textarea>
+            </div>
+            <button class="btn btn--primary" type="submit"><span class="lang-es">Enviar mensaje</span><span class="lang-en">Send message</span></button>
+            <p class="form__note">
+              <span class="lang-es">Al enviar el formulario aceptas nuestra <a href="/privacidad">política de privacidad</a>.</span>
+              <span class="lang-en">By sending the form you accept our <a href="/privacidad">privacy policy</a>.</span>
+            </p>
+          </form>
+        </div>
+
+        <aside class="contact__aside">
+          <dl>
+            <dt><span class="lang-es">Email</span><span class="lang-en">Email</span></dt>
+            <dd><a href="mailto:info.opex@opexxai.info">info.opex@opexxai.info</a></dd>
+            <dt><span class="lang-es">Ubicación</span><span class="lang-en">Location</span></dt>
+            <dd><span class="lang-es">Barcelona, España</span><span class="lang-en">Barcelona, Spain</span></dd>
+            <dt><span class="lang-es">Horario</span><span class="lang-en">Hours</span></dt>
+            <dd><span class="lang-es">De lunes a viernes. Respondemos en 1 o 2 días laborables.</span><span class="lang-en">Monday to Friday. We reply within 1 to 2 working days.</span></dd>
+          </dl>
+        </aside>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div class="site-footer__brand">
+          <span class="logo">OPEX</span>
+          <p>
+            <span class="lang-es">Estudio digital en Barcelona. Diseño web y automatización de procesos para negocios.</span>
+            <span class="lang-en">Digital studio in Barcelona. Web design and process automation for businesses.</span>
+          </p>
+        </div>
+        <div class="site-footer__col">
+          <h4><span class="lang-es">Navegación</span><span class="lang-en">Navigation</span></h4>
+          <ul>
+            <li><a href="/"><span class="lang-es">Inicio</span><span class="lang-en">Home</span></a></li>
+            <li><a href="/servicios"><span class="lang-es">Servicios</span><span class="lang-en">Services</span></a></li>
+            <li><a href="/metodo"><span class="lang-es">Método</span><span class="lang-en">Method</span></a></li>
+            <li><a href="/proceso"><span class="lang-es">Proceso</span><span class="lang-en">Process</span></a></li>
+            <li><a href="/nosotros"><span class="lang-es">Nosotros</span><span class="lang-en">About</span></a></li>
+            <li><a href="/contacto"><span class="lang-es">Contacto</span><span class="lang-en">Contact</span></a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h4><span class="lang-es">Estudio</span><span class="lang-en">Studio</span></h4>
+          <ul>
+            <li><a href="/nosotros"><span class="lang-es">Quiénes somos</span><span class="lang-en">About us</span></a></li>
+            <li><a href="/metodo"><span class="lang-es">El Método OPEX</span><span class="lang-en">The OPEX Method</span></a></li>
+            <li><a href="/proceso"><span class="lang-es">Cómo trabajamos</span><span class="lang-en">How we work</span></a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h4><span class="lang-es">Contacto</span><span class="lang-en">Contact</span></h4>
+          <ul>
+            <li><a href="mailto:info.opex@opexxai.info">info.opex@opexxai.info</a></li>
+            <li><span class="lang-es">Barcelona, España</span><span class="lang-en">Barcelona, Spain</span></li>
+            <li><a href="/contacto"><span class="lang-es">Formulario de contacto</span><span class="lang-en">Contact form</span></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <p>&copy; <span data-year>2026</span> OPEX</p>
+        <ul class="site-footer__legal">
+          <li><a href="/aviso-legal"><span class="lang-es">Aviso legal</span><span class="lang-en">Legal notice</span></a></li>
+          <li><a href="/privacidad"><span class="lang-es">Privacidad</span><span class="lang-en">Privacy</span></a></li>
+          <li><a href="/cookies">Cookies</a></li>
+          <li><button class="lang-switch" data-lang-toggle type="button" aria-label="Switch to English">EN</button></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
