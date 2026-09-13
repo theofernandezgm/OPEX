@@ -36,28 +36,28 @@
 # Early Hints (103) for the HTML pages: the browser fetches CSS and the main
 # font before the HTML arrives. Cloudflare turns these Link headers into hints.
 /
-  Link: </fonts.css>; rel=preload; as=style, </styles.css>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
+  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260913>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
 
 /servicios
-  Link: </fonts.css>; rel=preload; as=style, </styles.css>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
+  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260913>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
 
 /metodo
-  Link: </fonts.css>; rel=preload; as=style, </styles.css>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
+  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260913>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
 
 /proceso
-  Link: </fonts.css>; rel=preload; as=style, </styles.css>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
+  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260913>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
 
 /nosotros
-  Link: </fonts.css>; rel=preload; as=style, </styles.css>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
+  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260913>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
 
 /contacto
-  Link: </fonts.css>; rel=preload; as=style, </styles.css>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
+  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260913>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
 
 /aviso-legal
-  Link: </fonts.css>; rel=preload; as=style, </styles.css>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
+  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260913>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
 
 /privacidad
-  Link: </fonts.css>; rel=preload; as=style, </styles.css>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
+  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260913>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
 
 /cookies
-  Link: </fonts.css>; rel=preload; as=style, </styles.css>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
+  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260913>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin

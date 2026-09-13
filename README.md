@@ -30,6 +30,10 @@ proceso de build. Alojado en Cloudflare Pages, conectado a este repositorio.
   la ruta a `servicios.html`.
 - El `<head>` lleva un script inline que aplica el idioma antes del primer
   pintado. Si lo editas, recalcula su hash sha256 en `_headers` (ver `DEPLOY.md`).
+- `styles.css`, `fonts.css` y `main.js` se enlazan con un parámetro de versión
+  (`?v=AAAAMMDD`). Cuando cambies uno de esos archivos, sube la fecha en las
+  diez páginas y en las líneas `Link` de `_headers` (buscar y reemplazar), y el
+  cambio se verá al instante sin depender de la caché del navegador ni de Cloudflare.
 
 ## Probar en local
 
