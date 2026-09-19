@@ -5,7 +5,7 @@
 # is same-origin, except the contact form endpoint.
 
 /*
-  Content-Security-Policy: default-src 'none'; script-src 'self' 'sha256-+3HKmDEh6L6pJQWYGpmR9UVX+1KQYsxsvh37KyALi6w=' https://static.cloudflareinsights.com; style-src 'self'; font-src 'self'; img-src 'self'; connect-src https://api.web3forms.com https://cloudflareinsights.com; form-action 'self' https://api.web3forms.com; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'none'; script-src 'self' 'sha256-X1GmoQmo+a0bsVUDlAiImSQyDN6yJ1b9pNkP1zD/AS8=' https://static.cloudflareinsights.com; style-src 'self'; font-src 'self'; img-src 'self'; connect-src https://api.web3forms.com https://cloudflareinsights.com; form-action 'self' https://api.web3forms.com; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
   Referrer-Policy: strict-origin-when-cross-origin

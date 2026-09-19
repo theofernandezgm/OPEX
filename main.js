@@ -3,12 +3,26 @@
 
   var root = document.documentElement;
   var LANG_KEY = "opex-lang";
+  var LANGS = ["es", "en"];
+  var DEFAULT_LANG = "es";
 
-  /* Language (ES default, EN toggle) */
+  /* Language: a choice made with the toggle (localStorage) wins; otherwise the
+     first of the browser's preferred languages that is ES or EN; otherwise ES.
+     The inline <head> script applies the same rule before first paint. */
+
+  function detectLang() {
+    var prefs = navigator.languages || [navigator.language];
+    for (var i = 0; i < prefs.length; i++) {
+      var primary = String(prefs[i]).slice(0, 2).toLowerCase();
+      if (LANGS.indexOf(primary) !== -1) return primary;
+    }
+    return DEFAULT_LANG;
+  }
 
   function getLang() {
-    try { return localStorage.getItem(LANG_KEY) || "es"; }
-    catch (e) { return "es"; }
+    var stored = null;
+    try { stored = localStorage.getItem(LANG_KEY); } catch (e) {}
+    return LANGS.indexOf(stored) !== -1 ? stored : detectLang();
   }
 
   function applyLang(lang) {

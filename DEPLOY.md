@@ -1,6 +1,6 @@
 # OPEX — Despliegue y mantenimiento
 
-Última actualización: 2026-09-13. Este archivo no forma parte del sitio
+Última actualización: 2026-09-19. Este archivo no forma parte del sitio
 (está en el repositorio y, como todo lo que hay en la raíz, Cloudflare lo sirve
 en `/DEPLOY.md`; no contiene nada sensible).
 
@@ -91,10 +91,11 @@ desactivadas para el dominio:
 
 ## El script inline y su hash
 
-Cada página lleva un script inline en el `<head>` que aplica el idioma guardado
-antes del primer pintado. Su hash sha256 está en `_headers`. Si editas ese
-script hay que recalcular el hash; si no, la CSP lo bloquea y el idioma
-parpadea al cargar. En PowerShell:
+Cada página lleva un script inline en el `<head>` que aplica el idioma antes del
+primer pintado: el elegido con el selector EN/ES si lo hay, o si no el detectado
+del navegador (ES o EN; cualquier otro idioma, ES). Su hash sha256 está en
+`_headers`. Si editas ese script hay que recalcular el hash; si no, la CSP lo
+bloquea y el idioma parpadea al cargar. En PowerShell:
 
     $s = "<contenido exacto del script, sin las etiquetas <script>>"
     [Convert]::ToBase64String([Security.Cryptography.SHA256]::Create().ComputeHash([Text.Encoding]::UTF8.GetBytes($s)))
@@ -106,7 +107,8 @@ parpadea al cargar. En PowerShell:
 - DevTools → Consola: sin errores. DevTools → Red: solo peticiones al propio
   dominio (y a `cloudflareinsights.com` si Web Analytics está activo).
 - Formulario: envío de prueba.
-- Toggle de idioma y menú móvil.
+- Idioma: en una ventana privada (sin `localStorage`) debe salir el del navegador;
+  el selector EN/ES lo cambia y la elección se conserva al navegar. Menú móvil.
 
 ## Notas de mantenimiento
 

@@ -14,7 +14,7 @@ proceso de build. Alojado en Cloudflare Pages, conectado a este repositorio.
 | `404.html` | Página de error (Cloudflare la usa automáticamente) |
 | `styles.css` | Estilos del sitio |
 | `fonts.css`, `fonts/` | IBM Plex Sans, alojada en el propio sitio (sin peticiones a Google) |
-| `main.js` | Idioma ES/EN, menú móvil, formulario de contacto, año del pie |
+| `main.js` | Idioma (detección del navegador y selector ES/EN), menú móvil, formulario de contacto, año del pie |
 | `img/` | Imágenes |
 | `_headers` | Cabeceras de seguridad, caché y Early Hints (formato Cloudflare Pages) |
 | `robots.txt`, `sitemap.xml`, `.well-known/security.txt` | SEO y contacto de seguridad |
@@ -22,8 +22,10 @@ proceso de build. Alojado en Cloudflare Pages, conectado a este repositorio.
 
 ## Convenciones
 
-- Cada texto va en dos `<span>`: `lang-es` y `lang-en`. El idioma activo se
-  guarda en `localStorage` (`opex-lang`).
+- Cada texto va en dos `<span>`: `lang-es` y `lang-en`. En la primera visita el
+  idioma se detecta del navegador (`navigator.languages`: el primero que sea ES o
+  EN; si no hay ninguno, ES). El selector EN/ES guarda la elección en
+  `localStorage` (`opex-lang`) y tiene prioridad sobre la detección.
 - La cabecera y el pie son idénticos en todas las páginas. Si cambias la
   navegación, aplícalo en las diez.
 - Las páginas se enlazan sin extensión (`/servicios`); Cloudflare Pages resuelve
