@@ -17,3 +17,6 @@ _build/
 
 # Wrangler local cache (created by 'wrangler pages deploy')
 .wrangler/
+
+# Local-only notes, never published (see DEPLOY.md)
+TODO.local.md

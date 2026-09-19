@@ -1,0 +1,10 @@
+# OPEX — block public access to repo-internal files that ship because
+# Cloudflare Pages deploys straight from the repo root (no build step,
+# no separate publish directory). These files contain no secrets, but
+# they document internal deploy details and a to-do list that should not
+# be public. See DEPLOY.md for the full explanation.
+
+/DEPLOY.md            /404.html   404
+/README.md            /404.html   404
+/.gitignore           /404.html   404
+/.gitattributes        /404.html    404
