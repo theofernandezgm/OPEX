@@ -125,4 +125,3 @@ bloquea y el idioma parpadea al cargar. En PowerShell:
 - `apple-touch-icon` (PNG 180×180); Safari e iOS no usan el favicon SVG.
 - `og:image` (1200×630) por página.
 - Textos legales: NIF y revisión profesional.
-- Reposicionar los textos hacia clientes corporativos (hoy hablan de "pequeños negocios").
