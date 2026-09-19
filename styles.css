@@ -4,10 +4,11 @@
   --color-white: #ffffff;
   --color-bg-alt: #f4f6f8;
   --color-border: #d9dee4;
+  --color-border-interactive: #8a94a0; /* 3:1+ on white; for input/control boundaries only (WCAG 1.4.11) - decorative --color-border stays lighter */
   --color-border-light: #e8ecf0;
   --color-text: #1c2128;
   --color-text-secondary: #596270;
-  --color-text-muted: #7a8390;
+  --color-text-muted: #667080; /* was #7a8390 (3.83:1 on white, fails AA); now >=4.5:1 */
   --color-primary: #0f2a47;
   --color-primary-dark: #0a1d32;
   --color-primary-light: #e7edf4;
@@ -60,6 +61,17 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+/* Links inside prose/body-text contexts need a non-colour cue too (WCAG 1.4.1):
+   colour alone (link vs body text is 1.79:1, below the 3:1 minimum) is not
+   enough to tell them apart. Nav, buttons and cards are unaffected. */
+.prose a,
+.form__note a,
+.form__message a,
+.contact__aside a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 button {
@@ -350,7 +362,7 @@ h4 {
   height: 40px;
   padding: 0;
   background: none;
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-border-interactive);
   border-radius: var(--radius);
   cursor: pointer;
 }
@@ -772,7 +784,7 @@ h4 {
   font-size: 15px;
   color: var(--color-text);
   background: var(--color-white);
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-border-interactive);
   border-radius: var(--radius);
 }
 
@@ -790,7 +802,7 @@ h4 {
 
 .form__note {
   margin-top: 12px;
-  font-size: 13px;
+  font-size: 14px;
   color: var(--color-text-muted);
 }
 
