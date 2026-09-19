@@ -81,13 +81,33 @@ desactivadas para el dominio:
 - Scrape Shield → **Email Address Obfuscation**: OFF (si no, los enlaces `mailto:` dejan de funcionar).
 - Speed → Optimization → **Rocket Loader**: OFF.
 - Speed → Optimization → **Auto Minify**: OFF (altera el script inline y su hash).
-- Security → Bots → **Bot Fight Mode / JavaScript Detections**: OFF. Inyecta un
-  script inline distinto en cada petición, que la CSP bloquea; el resultado es un
-  error de consola en cada carga y una detección que nunca se ejecuta. Un sitio
-  estático con formulario protegido por honeypot no lo necesita.
-- **Web Analytics** (cookieless): está permitido en la CSP (`static.cloudflareinsights.com`
-  y `cloudflareinsights.com`). Se puede activar o desactivar en el panel sin tocar nada.
+- **Web Analytics** (cookieless): está permitido en la CSP (`static.cloudflareinsights.com`,
+  `cloudflareinsights.com`, y desde 2026-09-20 `connect-src 'self'` para el beacon
+  same-origin `/cdn-cgi/rum`). Se puede activar o desactivar en el panel sin tocar nada.
 - Speed → Optimization → **Early Hints**: ON (aprovecha las cabeceras `Link`).
+
+### JS Detections (error de consola conocido y aceptado)
+
+Bot Fight Mode está OFF y todos los demás interruptores de bots también, pero
+Cloudflare sigue inyectando un script (`/cdn-cgi/challenge-platform/scripts/jsd/main.js`)
+en cada petición. Esto es un comportamiento documentado del plan Free: activar
+Bot Fight Mode alguna vez habilita JS Detections, pero desactivarlo después NO lo
+desactiva, y el plan Free no tiene un interruptor independiente para JS
+Detections (solo existe en Super Bot Fight Mode / Enterprise) ni acceso de API
+con el scope necesario. Confirmado contra la documentación oficial de Cloudflare
+y un hilo de su comunidad con el mismo síntoma (verificado 2026-09-20).
+
+El script inyectado no tiene hash estable (cambia por petición) y no hay soporte
+de nonce en Cloudflare Pages para un sitio estático sin backend, así que no se
+puede permitir en la CSP sin añadir `'unsafe-inline'` a `script-src` — lo cual
+debilitaría la CSP contra cualquier futuro XSS, a cambio de silenciar un error
+cosmético. Decisión: **no se añade**. Se acepta el error de consola y el techo
+de 92 en Lighthouse Best Practices como coste conocido del plan Free.
+
+Si esto cambia de importancia (por ejemplo, un revisor de seguridad lo señala
+como bloqueante), las opciones son: (a) subir a Cloudflare Pro, donde JS
+Detections sí es un interruptor real, o (b) añadir `'unsafe-inline'` sabiendo
+el trade-off. Ninguna se ha aplicado.
 
 ## El script inline y su hash
 
@@ -104,8 +124,10 @@ bloquea y el idioma parpadea al cargar. En PowerShell:
 
 - https://securityheaders.com → nota A
 - https://observatory.mozilla.org → sin fallos de CSP
-- DevTools → Consola: sin errores. DevTools → Red: solo peticiones al propio
-  dominio (y a `cloudflareinsights.com` si Web Analytics está activo).
+- DevTools → Consola: un único error esperado y aceptado (JS Detections, ver
+  más arriba). Cualquier otro error de CSP sí hay que investigarlo. DevTools →
+  Red: solo peticiones al propio dominio (y a `cloudflareinsights.com` si Web
+  Analytics está activo).
 - Formulario: envío de prueba.
 - Idioma: en una ventana privada (sin `localStorage`) debe salir el del navegador;
   el selector EN/ES lo cambia y la elección se conserva al navegar. Menú móvil.
