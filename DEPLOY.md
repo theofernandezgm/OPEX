@@ -74,6 +74,7 @@ funcionan.
   envíe respuestas 103 y el navegador descargue CSS y fuente antes de recibir el HTML.
 - `404.html` en la raíz: Pages lo usa como página de error sin configurar nada.
 - URLs sin extensión (`/servicios`): Pages las resuelve solas a `servicios.html`.
+  Esto también aplica dentro de `en/`: `/en/servicios` resuelve a `en/servicios.html`.
 - `robots.txt`, `sitemap.xml`, `.well-known/security.txt`: apuntan a
   `https://www.opexxai.info`. Si cambia el dominio, buscar y reemplazar en los tres.
 - Todo lo que hay en la raíz del repositorio se publica (también `README.md`,
@@ -118,9 +119,33 @@ como bloqueante), las opciones son: (a) subir a Cloudflare Pro, donde JS
 Detections sí es un interruptor real, o (b) añadir `'unsafe-inline'` sabiendo
 el trade-off. Ninguna se ha aplicado.
 
-## El script inline y su hash
+## Estructura de idiomas (ES en la raíz, EN bajo `/en/`)
 
-Cada página lleva un script inline en el `<head>` que aplica el idioma antes del
+Desde 2026-09-20 el español y el inglés son URLs reales y distintas, no un
+mismo HTML con textos alternados por JS: las 9 páginas de contenido (`index`,
+`servicios`, `metodo`, `proceso`, `nosotros`, `contacto`, `aviso-legal`,
+`cookies`, `privacidad`) siguen en la raíz para el español, y su versión en
+inglés vive en `en/` (`en/index.html`, `en/servicios.html`, etc.), servida en
+`/en/`, `/en/servicios`, etc. Cada página lleva `<link rel="canonical">` a su
+propia URL y un bloque `hreflang` (`es`, `en`, `x-default`) apuntando a ambas.
+El botón "EN"/"ES" del selector es ahora un enlace normal (`<a>`) a la versión
+hermana, no un botón que cambia el idioma con JS.
+
+Los ficheros CSS, fuentes y `main.js` **no** están duplicados bajo `en/`: las
+páginas en inglés los referencian con ruta absoluta (`/styles.css`, no
+`styles.css`) para que sigan resolviendo al mismo fichero en la raíz aunque la
+página esté en `/en/algo`.
+
+**`404.html` es la excepción** y se queda fuera de este esquema a propósito:
+sigue siendo una sola página bilingüe con el selector EN/ES por JS (como
+funcionaba todo el sitio antes de este cambio). Lleva `noindex`, así que no
+necesita URLs propias ni `hreflang`. Por eso sigue siendo la única página que
+usa el script inline de idioma en el `<head>` y los `<span class="lang-es">`
+/ `<span class="lang-en">`.
+
+### El script inline y su hash (solo en `404.html`)
+
+`404.html` lleva un script inline en el `<head>` que aplica el idioma antes del
 primer pintado: el elegido con el selector EN/ES si lo hay, o si no el detectado
 del navegador (ES o EN; cualquier otro idioma, ES). Su hash sha256 está en
 `_headers`. Si editas ese script hay que recalcular el hash; si no, la CSP lo
@@ -143,12 +168,22 @@ bloquea y el idioma parpadea al cargar. En PowerShell:
 
 ## Notas de mantenimiento
 
-- La cabecera y el pie son idénticos en las 10 páginas. Si cambias la
-  navegación, aplícalo en todas.
+- La cabecera y el pie son idénticos (con sus textos traducidos) en las 9
+  páginas de contenido, en sus dos versiones (raíz + `en/`) y en `404.html`.
+  Si cambias la navegación, aplícalo en las 19 páginas.
 - Fuentes propias en `fonts/` (IBM Plex Sans, latin y latin-ext). No hay
   peticiones a Google.
-- `main.js` gestiona idioma, menú móvil, formulario y año del pie. Sin dependencias.
-- Textos bilingües: cada texto va en dos `<span>`, `lang-es` y `lang-en`.
+- `main.js` gestiona el menú móvil, el formulario y el año del pie en todas
+  las páginas. En `404.html` además gestiona el selector de idioma por JS
+  (ver arriba); en el resto de páginas ese código queda inerte porque ya no
+  hay ningún elemento `[data-lang-toggle]` que lo dispare.
+- Textos bilingües: solo en `404.html`, cada texto va en dos `<span>`,
+  `lang-es` y `lang-en`. En el resto de páginas cada idioma es un fichero
+  aparte con un solo texto por línea (ver "Estructura de idiomas" arriba).
+- Al añadir o editar contenido en una página de las 9, hay que replicar el
+  cambio en su pareja de idioma (`archivo.html` ↔ `en/archivo.html`) y, si
+  cambia sustancialmente, actualizar su `<lastmod>` en `sitemap.xml` para
+  ambas URLs.
 
 ## Pendiente
 

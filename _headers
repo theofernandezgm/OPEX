@@ -67,3 +67,33 @@
 
 /cookies
   Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260913>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
+
+# Same Early Hints for the English routes under /en/. The Link targets stay
+# root-relative (/fonts.css etc.) because the CSS/font/JS files are not
+# duplicated under /en/ -- only the HTML pages are.
+/en/
+  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260913>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
+
+/en/servicios
+  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260913>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
+
+/en/metodo
+  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260913>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
+
+/en/proceso
+  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260913>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
+
+/en/nosotros
+  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260913>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
+
+/en/contacto
+  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260913>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
+
+/en/aviso-legal
+  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260913>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
+
+/en/privacidad
+  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260913>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
+
+/en/cookies
+  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260913>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
