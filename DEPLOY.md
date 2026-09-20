@@ -1,8 +1,12 @@
 # OPEX — Despliegue y mantenimiento
 
-Última actualización: 2026-09-19. Este archivo no forma parte del sitio
-(está en el repositorio y, como todo lo que hay en la raíz, Cloudflare lo sirve
-en `/DEPLOY.md`; no contiene nada sensible).
+Última actualización: 2026-09-20. Este archivo no forma parte del sitio, pero
+como todo lo que hay en la raíz del repositorio se publica junto al sitio
+(Cloudflare lo serviría en `/DEPLOY.md`), hay una regla en `_redirects` que
+lo bloquea (devuelve 404). Aun así, este archivo ya no lleva una lista de
+pendientes ni nada que no convenga que se filtre si la regla falla algún día:
+esa información vive ahora en `TODO.local.md`, que está en `.gitignore` y
+nunca se sube al repositorio.
 
 ## Dónde está el sitio
 
@@ -143,7 +147,4 @@ bloquea y el idioma parpadea al cargar. En PowerShell:
 
 ## Pendiente
 
-- Sustituir `img/estudio-barcelona.jpg` (render) por fotografía real.
-- `apple-touch-icon` (PNG 180×180); Safari e iOS no usan el favicon SVG.
-- `og:image` (1200×630) por página.
-- Textos legales: NIF y revisión profesional.
+Ver `TODO.local.md` (no está en el repositorio; se queda solo en este equipo).
