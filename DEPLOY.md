@@ -21,7 +21,8 @@ Es un sitio estático: no hay build ni dependencias. Pages sirve la carpeta tal 
 
 ## Cómo publicar un cambio
 
-No hay nada que configurar: el proyecto ya está conectado al repositorio.
+**`git push` a `main` es la única vía de despliegue a producción.** No hay
+nada que configurar: el proyecto ya está conectado al repositorio.
 
 - Cada **push a `main`** se publica en producción (www.opexxai.info) en 1–2 minutos.
 - Cada push a **otra rama** genera una previsualización en
@@ -41,15 +42,19 @@ Ajustes del proyecto (Settings → Builds), por si hay que revisarlos:
 
 ### Previsualización sin pasar por Git
 
+**Solo para ramas de previsualización — nunca para `main`.** Tener dos vías
+documentadas a producción es lo que provoca que el repositorio y el sitio en
+vivo se acaben separando, así que `wrangler pages deploy` no se usa nunca con
+`--branch main`; esa rama se publica solo mediante `git push` (ver arriba).
+
 Con Node y Wrangler instalados (una sola vez `npx wrangler login`), desde la
 carpeta del sitio:
 
     npx wrangler pages deploy . --project-name opex --branch <nombre>
 
-Sube el contenido de la carpeta a `https://<nombre>.opex.pages.dev`. Con
-`--branch main` iría directo a producción; mejor reservar `main` para Git, así
-el repositorio y el sitio no se separan. En PowerShell, si la política de
-ejecución bloquea `npx`, usa `npx.cmd`.
+Sube el contenido de la carpeta a `https://<nombre>.opex.pages.dev`, sin tocar
+producción. En PowerShell, si la política de ejecución bloquea `npx`, usa
+`npx.cmd`.
 
 ## Probar en local
 

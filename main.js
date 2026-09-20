@@ -38,6 +38,29 @@
       var v = fields[j].getAttribute("data-ph-" + lang);
       if (v !== null) fields[j].setAttribute("placeholder", v);
     }
+
+    /* Attributes/content the visible-span toggle doesn't reach: <title>,
+       meta description, og:title/og:description, aria-labels, alt text,
+       hidden form values. Each element carries the ES/EN text as
+       data-i18n-es/-en; data-i18n-attr names the attribute to set
+       ("content", "aria-label", "alt", "value"); with no data-i18n-attr,
+       <title> gets document.title and anything else gets textContent. */
+    var i18nEls = document.querySelectorAll("[data-i18n-en]");
+    for (var m = 0; m < i18nEls.length; m++) {
+      var el = i18nEls[m];
+      var val = el.getAttribute("data-i18n-" + lang);
+      if (val === null) continue;
+      var attr = el.getAttribute("data-i18n-attr");
+      if (attr === "content" || attr === "aria-label" || attr === "alt") {
+        el.setAttribute(attr, val);
+      } else if (attr === "value") {
+        el.value = val;
+      } else if (el.tagName === "TITLE") {
+        document.title = val;
+      } else {
+        el.textContent = val;
+      }
+    }
   }
 
   function setLang(lang) {
@@ -119,7 +142,7 @@
 
       var keyField = form.querySelector('[name="access_key"]');
       var key = keyField ? keyField.value : "";
-      if (!key || key.indexOf("PASTE_YOUR") === 0) {
+      if (!key) {
         showError();
         return;
       }
@@ -142,6 +165,13 @@
           if (btn) btn.removeAttribute("disabled");
         });
     });
+
+    /* Non-JS or failed-fetch submissions post straight to Web3Forms, which
+       redirects back to the "redirect" hidden field's URL. Show the same
+       success state when that lands here. */
+    if (/[?&]enviado=1(&|$)/.test(window.location.search)) {
+      showSuccess();
+    }
   }
 
   /* Footer year */
