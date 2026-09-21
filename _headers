@@ -9,9 +9,15 @@
 # console error (Cloudflare injects a per-request inline script on the Free
 # plan that cannot be disabled and has no stable hash to allow) - that is a
 # known, accepted trade-off. See DEPLOY.md.
+#
+# web3forms.com (loader script) and hcaptcha.com / *.hcaptcha.com (widget,
+# iframe, styles, verification calls) are allowed for the hCaptcha spam
+# check on the contact form (contacto.html / en/contacto.html). The
+# wildcard subdomain is intentional -- hCaptcha's own CSP guidance says not
+# to hardcode specific asset subdomains, since they can change without notice.
 
 /*
-  Content-Security-Policy: default-src 'none'; script-src 'self' 'sha256-X1GmoQmo+a0bsVUDlAiImSQyDN6yJ1b9pNkP1zD/AS8=' https://static.cloudflareinsights.com; style-src 'self'; font-src 'self'; img-src 'self'; connect-src 'self' https://api.web3forms.com https://cloudflareinsights.com; form-action 'self' https://api.web3forms.com; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'none'; script-src 'self' 'sha256-X1GmoQmo+a0bsVUDlAiImSQyDN6yJ1b9pNkP1zD/AS8=' https://static.cloudflareinsights.com https://web3forms.com https://hcaptcha.com https://*.hcaptcha.com; style-src 'self' https://hcaptcha.com https://*.hcaptcha.com; font-src 'self'; img-src 'self'; frame-src https://hcaptcha.com https://*.hcaptcha.com; connect-src 'self' https://api.web3forms.com https://cloudflareinsights.com https://hcaptcha.com https://*.hcaptcha.com; form-action 'self' https://api.web3forms.com; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
   Referrer-Policy: strict-origin-when-cross-origin
