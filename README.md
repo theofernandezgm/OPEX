@@ -8,6 +8,10 @@ proceso de build. Alojado en Cloudflare Pages, conectado a este repositorio.
 
 ## Estructura
 
+El sitio publicado vive entero en `site/`; Cloudflare tiene esa carpeta como
+"Build output directory", así que nada de lo que hay fuera de ella llega a
+servirse. Las rutas de la tabla son relativas a `site/`:
+
 | Ruta | Qué es |
 |---|---|
 | `index.html`, `servicios.html`, `metodo.html`, `proceso.html`, `nosotros.html`, `contacto.html` | Páginas principales (español) |
@@ -20,9 +24,12 @@ proceso de build. Alojado en Cloudflare Pages, conectado a este repositorio.
 | `img/` | Imágenes |
 | `og-image.png`, `og-image-en.png`, `apple-touch-icon.png`, `favicon.svg` | Imagen para redes sociales (una por idioma) e iconos |
 | `_headers` | Cabeceras de seguridad, caché y Early Hints (formato Cloudflare Pages) |
-| `_redirects` | Redirecciones 301 de las URLs inglesas antiguas y bloqueo de los archivos internos |
+| `_redirects` | Redirecciones 301 de las URLs inglesas antiguas |
 | `robots.txt`, `sitemap.xml`, `.well-known/security.txt` | SEO y contacto de seguridad |
-| `DEPLOY.md` | Guía de despliegue y mantenimiento |
+
+Fuera de `site/`, en la raíz del repositorio y por tanto nunca públicos:
+`README.md`, `DEPLOY.md` (guía de despliegue y mantenimiento), `.gitignore`,
+`.gitattributes` y las notas locales (`TODO.local.md`, `_notes/`).
 
 ## Convenciones
 
@@ -50,9 +57,9 @@ Detalles de despliegue, idiomas, CSP y ajustes de Cloudflare: `DEPLOY.md`.
 
 ## Probar en local
 
-Con Node instalado, desde la carpeta del sitio:
+Con Node instalado, desde la raíz del repositorio:
 
-    npx wrangler pages dev .
+    npx wrangler pages dev site
 
 Sirve el sitio en http://localhost:8788 con las mismas cabeceras y rutas que
 producción. En PowerShell, si la política de ejecución bloquea `npx`, usa

@@ -1,12 +1,20 @@
 # OPEX — Despliegue y mantenimiento
 
-Última actualización: 2026-09-23. Este archivo no forma parte del sitio, pero
-como todo lo que hay en la raíz del repositorio se publica junto al sitio
-(Cloudflare lo serviría en `/DEPLOY.md`), hay una regla en `_redirects` que
-lo bloquea (devuelve 404). Aun así, este archivo ya no lleva una lista de
-pendientes ni nada que no convenga que se filtre si la regla falla algún día:
-esa información vive ahora en `TODO.local.md`, que está en `.gitignore` y
-nunca se sube al repositorio.
+Última actualización: 2026-09-23. Este archivo no forma parte del sitio y no se
+publica: desde 2026-09-23 Cloudflare solo sirve la carpeta `site/` (ver
+"Estructura del repositorio"), así que todo lo que queda en la raíz —este
+archivo, `README.md`, `.gitignore`, `.gitattributes`, `TODO.local.md`— es
+inalcanzable desde fuera.
+
+Antes no era así. El sitio se publicaba desde la raíz del repositorio y había
+cuatro reglas en `_redirects` que supuestamente devolvían 404 para
+`/DEPLOY.md`, `/README.md`, `/.gitignore` y `/.gitattributes`. **Esas reglas
+nunca funcionaron**: Cloudflare Pages solo aplica `_redirects` a rutas donde no
+existe un fichero estático, así que servía el archivo directamente y la regla
+no se consultaba nunca. Se detectó comprobando el sitio en producción el
+2026-09-23 (las redirecciones 301 del mismo fichero sí funcionaban, porque no
+hay ningún fichero en esas rutas). La carpeta `site/` es la solución de fondo;
+las reglas inútiles se han quitado.
 
 ## Dónde está el sitio
 
@@ -15,9 +23,9 @@ nunca se sube al repositorio.
   `https://www.opexxai.info`; la raíz sin `www` redirige (regla de la zona).
 - **Código:** GitHub, `theofernandezgm/OPEX`, rama `main`. El proyecto Pages está
   conectado a este repositorio.
-- **Formulario:** Web3Forms. La access key está en `contacto.html` y es pública por diseño.
+- **Formulario:** Web3Forms. La access key está en `site/contacto.html` y es pública por diseño.
 
-Es un sitio estático: no hay build ni dependencias. Pages sirve la carpeta tal cual.
+Es un sitio estático: no hay build ni dependencias. Pages sirve `site/` tal cual.
 
 ## Cómo publicar un cambio
 
@@ -37,8 +45,12 @@ Ajustes del proyecto (Settings → Builds), por si hay que revisarlos:
 |---|---|
 | Framework preset | None |
 | Build command | (vacío) |
-| Build output directory | `/` |
+| Build output directory | `site` |
 | Production branch | `main` |
+
+**`Build output directory` debe ser `site`.** Si se deja en `/`, Cloudflare
+publica la raíz del repositorio entera (incluidos `DEPLOY.md` y `README.md`) y
+además el sitio no funciona, porque no hay `index.html` en la raíz.
 
 ### Previsualización sin pasar por Git
 
@@ -48,9 +60,9 @@ vivo se acaben separando, así que `wrangler pages deploy` no se usa nunca con
 `--branch main`; esa rama se publica solo mediante `git push` (ver arriba).
 
 Con Node y Wrangler instalados (una sola vez `npx wrangler login`), desde la
-carpeta del sitio:
+raíz del repositorio:
 
-    npx wrangler pages deploy . --project-name opex --branch <nombre>
+    npx wrangler pages deploy site --project-name opex --branch <nombre>
 
 Sube el contenido de la carpeta a `https://<nombre>.opex.pages.dev`, sin tocar
 producción. En PowerShell, si la política de ejecución bloquea `npx`, usa
@@ -58,7 +70,7 @@ producción. En PowerShell, si la política de ejecución bloquea `npx`, usa
 
 ## Probar en local
 
-    npx wrangler pages dev .
+    npx wrangler pages dev site
 
 Sirve el sitio en http://localhost:8788 aplicando `_headers`, `404.html` y las
 rutas sin extensión igual que producción. En Windows necesita el Visual C++
@@ -72,11 +84,11 @@ funcionan.
 - `_headers`: cabeceras de seguridad, caché y Early Hints. Pages lo aplica
   automáticamente. Las cabeceras `Link` de las páginas HTML hacen que Cloudflare
   envíe respuestas 103 y el navegador descargue CSS y fuente antes de recibir el HTML.
-- `404.html` en la raíz: Pages lo usa como página de error sin configurar nada.
+- `404.html` en la raíz de `site/`: Pages lo usa como página de error sin
+  configurar nada.
 - URLs sin extensión (`/servicios`): Pages las resuelve solas a `servicios.html`.
   Esto también aplica dentro de `en/`: `/en/services` resuelve a `en/services.html`.
-- `_redirects`: además de bloquear los archivos internos del repositorio,
-  contiene las redirecciones 301 de las URLs inglesas antiguas
+- `_redirects`: las redirecciones 301 de las URLs inglesas antiguas
   (`/en/servicios` → `/en/services`, etc.). Ver "Estructura de idiomas".
 - `og-image.png` y `og-image-en.png` (1200×630) son la imagen de vista previa al
   compartir el sitio, una por idioma: las páginas en español y `404.html`
@@ -86,10 +98,39 @@ funcionan.
   que regenerarlos. Tienen su propia regla de caché en `_headers` (7 días).
 - `robots.txt`, `sitemap.xml`, `.well-known/security.txt`: apuntan a
   `https://www.opexxai.info`. Si cambia el dominio, buscar y reemplazar en los tres.
-- Todo lo que hay en la raíz del repositorio se publica (también `README.md`,
-  `DEPLOY.md`, `.gitignore`). Si algún día se quiere evitar, la solución es
-  mover el sitio a una subcarpeta (`site/`) y poner esa carpeta como
-  "Build output directory" en Cloudflare.
+- Solo se publica el contenido de `site/`. Lo que esté fuera de esa carpeta no
+  llega nunca a Cloudflare, así que la documentación y los ficheros de git se
+  quedan en la raíz del repositorio (ver "Estructura del repositorio").
+
+## Estructura del repositorio (qué se publica y qué no)
+
+Desde 2026-09-23 el sitio vive en `site/` y solo esa carpeta se publica:
+
+    OPEX/
+    ├─ site/              <- lo único que Cloudflare sirve
+    │  ├─ index.html, servicios.html, …   (9 páginas en español)
+    │  ├─ en/             (las mismas 9 en inglés, nombres en inglés)
+    │  ├─ 404.html, styles.css, main.js, fonts.css
+    │  ├─ fonts/, img/, favicon.svg, apple-touch-icon.png
+    │  ├─ og-image.png, og-image-en.png
+    │  ├─ robots.txt, sitemap.xml, .well-known/
+    │  └─ _headers, _redirects
+    ├─ README.md          <- no se publica
+    ├─ DEPLOY.md          <- no se publica
+    ├─ TODO.local.md      <- ni se publica ni se sube (.gitignore)
+    └─ _notes/            <- ni se publica ni se sube (.gitignore)
+
+Dos consecuencias prácticas:
+
+- `_headers` y `_redirects` tienen que estar **dentro** de `site/`. Fuera de
+  ahí Cloudflare no los ve y se pierden la CSP, la caché y las redirecciones.
+- Las rutas absolutas de las páginas (`/servicios`, `/styles.css`) siguen
+  siendo correctas: la raíz del sitio publicado es `site/`, no la del
+  repositorio.
+
+Para añadir un archivo que no deba ser público, basta con dejarlo fuera de
+`site/`. Ya no hace falta ninguna regla en `_redirects` (y, de hecho, esas
+reglas no funcionaban; ver arriba).
 
 ## Ajustes de Cloudflare que rompen la CSP
 

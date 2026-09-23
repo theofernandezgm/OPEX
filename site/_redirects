@@ -1,0 +1,19 @@
+# OPEX — redirecciones (formato Cloudflare Pages).
+#
+# Ya no hay reglas que bloqueen DEPLOY.md, README.md ni los ficheros de git:
+# desde 2026-09-23 solo se publica esta carpeta (`site/`, configurada como
+# "Build output directory" en Cloudflare), así que esos archivos se quedan en
+# la raíz del repositorio y nunca llegan a servirse. Las reglas anteriores, en
+# cualquier caso, no funcionaban: Pages sirve el fichero estático y no llega a
+# aplicar la redirección cuando el archivo existe en esa ruta.
+
+# Las páginas en inglés pasaron a URLs en inglés (2026-09-23). Redirecciones
+# permanentes para que las rutas antiguas, y lo que ya enlazase a ellas, sigan
+# funcionando.
+/en/servicios     /en/services      301
+/en/metodo        /en/method        301
+/en/proceso       /en/process       301
+/en/nosotros      /en/about         301
+/en/contacto      /en/contact       301
+/en/aviso-legal   /en/legal-notice  301
+/en/privacidad    /en/privacy       301
