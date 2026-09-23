@@ -12,7 +12,7 @@
 #
 # web3forms.com (loader script) and hcaptcha.com / *.hcaptcha.com (widget,
 # iframe, styles, verification calls) are allowed for the hCaptcha spam
-# check on the contact form (contacto.html / en/contacto.html). The
+# check on the contact form (contacto.html / en/contact.html). The
 # wildcard subdomain is intentional -- hCaptcha's own CSP guidance says not
 # to hardcode specific asset subdomains, since they can change without notice.
 
@@ -36,6 +36,15 @@
 /favicon.svg
   Cache-Control: public, max-age=86400
 
+/og-image.png
+  Cache-Control: public, max-age=604800
+
+/og-image-en.png
+  Cache-Control: public, max-age=604800
+
+/apple-touch-icon.png
+  Cache-Control: public, max-age=604800
+
 /fonts.css
   Cache-Control: public, max-age=86400
 
@@ -48,58 +57,58 @@
 # Early Hints (103) for the HTML pages: the browser fetches CSS and the main
 # font before the HTML arrives. Cloudflare turns these Link headers into hints.
 /
-  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260913>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
+  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260923>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
 
 /servicios
-  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260913>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
+  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260923>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
 
 /metodo
-  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260913>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
+  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260923>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
 
 /proceso
-  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260913>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
+  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260923>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
 
 /nosotros
-  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260913>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
+  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260923>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
 
 /contacto
-  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260913>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
+  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260923>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
 
 /aviso-legal
-  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260913>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
+  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260923>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
 
 /privacidad
-  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260913>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
+  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260923>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
 
 /cookies
-  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260913>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
+  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260923>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
 
 # Same Early Hints for the English routes under /en/. The Link targets stay
 # root-relative (/fonts.css etc.) because the CSS/font/JS files are not
 # duplicated under /en/ -- only the HTML pages are.
 /en/
-  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260913>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
+  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260923>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
 
-/en/servicios
-  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260913>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
+/en/services
+  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260923>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
 
-/en/metodo
-  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260913>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
+/en/method
+  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260923>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
 
-/en/proceso
-  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260913>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
+/en/process
+  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260923>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
 
-/en/nosotros
-  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260913>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
+/en/about
+  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260923>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
 
-/en/contacto
-  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260913>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
+/en/contact
+  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260923>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
 
-/en/aviso-legal
-  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260913>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
+/en/legal-notice
+  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260923>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
 
-/en/privacidad
-  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260913>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
+/en/privacy
+  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260923>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
 
 /en/cookies
-  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260913>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin
+  Link: </fonts.css?v=20260913>; rel=preload; as=style, </styles.css?v=20260923>; rel=preload; as=style, </fonts/ibm-plex-sans-var-latin.woff2>; rel=preload; as=font; crossorigin

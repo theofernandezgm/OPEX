@@ -20,3 +20,4 @@ _build/
 
 # Local-only notes, never published (see DEPLOY.md)
 TODO.local.md
+_notes/

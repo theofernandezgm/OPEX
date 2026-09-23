@@ -1,6 +1,6 @@
 # OPEX — Despliegue y mantenimiento
 
-Última actualización: 2026-09-20. Este archivo no forma parte del sitio, pero
+Última actualización: 2026-09-23. Este archivo no forma parte del sitio, pero
 como todo lo que hay en la raíz del repositorio se publica junto al sitio
 (Cloudflare lo serviría en `/DEPLOY.md`), hay una regla en `_redirects` que
 lo bloquea (devuelve 404). Aun así, este archivo ya no lleva una lista de
@@ -74,7 +74,16 @@ funcionan.
   envíe respuestas 103 y el navegador descargue CSS y fuente antes de recibir el HTML.
 - `404.html` en la raíz: Pages lo usa como página de error sin configurar nada.
 - URLs sin extensión (`/servicios`): Pages las resuelve solas a `servicios.html`.
-  Esto también aplica dentro de `en/`: `/en/servicios` resuelve a `en/servicios.html`.
+  Esto también aplica dentro de `en/`: `/en/services` resuelve a `en/services.html`.
+- `_redirects`: además de bloquear los archivos internos del repositorio,
+  contiene las redirecciones 301 de las URLs inglesas antiguas
+  (`/en/servicios` → `/en/services`, etc.). Ver "Estructura de idiomas".
+- `og-image.png` y `og-image-en.png` (1200×630) son la imagen de vista previa al
+  compartir el sitio, una por idioma: las páginas en español y `404.html`
+  referencian la primera, las de `en/` la segunda. `apple-touch-icon.png`
+  (180×180, sin transparencia) es el icono al añadir el sitio a la pantalla de
+  inicio en iOS. Los tres se generan a mano; si cambia el eslogan o la marca hay
+  que regenerarlos. Tienen su propia regla de caché en `_headers` (7 días).
 - `robots.txt`, `sitemap.xml`, `.well-known/security.txt`: apuntan a
   `https://www.opexxai.info`. Si cambia el dominio, buscar y reemplazar en los tres.
 - Todo lo que hay en la raíz del repositorio se publica (también `README.md`,
@@ -125,9 +134,11 @@ Desde 2026-09-20 el español y el inglés son URLs reales y distintas, no un
 mismo HTML con textos alternados por JS: las 9 páginas de contenido (`index`,
 `servicios`, `metodo`, `proceso`, `nosotros`, `contacto`, `aviso-legal`,
 `cookies`, `privacidad`) siguen en la raíz para el español, y su versión en
-inglés vive en `en/` (`en/index.html`, `en/servicios.html`, etc.), servida en
-`/en/`, `/en/servicios`, etc. Cada página lleva `<link rel="canonical">` a su
-propia URL y un bloque `hreflang` (`es`, `en`, `x-default`) apuntando a ambas.
+inglés vive en `en/` con nombres en inglés (`en/index.html`, `en/services.html`,
+`en/method.html`, `en/process.html`, `en/about.html`, `en/contact.html`,
+`en/legal-notice.html`, `en/privacy.html`, `en/cookies.html`), servida en `/en/`,
+`/en/services`, etc. Cada página lleva `<link rel="canonical">` a su propia URL
+y un bloque `hreflang` (`es`, `en`, `x-default`) apuntando a ambas.
 El botón "EN"/"ES" del selector es ahora un enlace normal (`<a>`) a la versión
 hermana, no un botón que cambia el idioma con JS.
 
@@ -142,6 +153,16 @@ funcionaba todo el sitio antes de este cambio). Lleva `noindex`, así que no
 necesita URLs propias ni `hreflang`. Por eso sigue siendo la única página que
 usa el script inline de idioma en el `<head>` y los `<span class="lang-es">`
 / `<span class="lang-en">`.
+
+Es también la única que lleva `data-lang` en `<html>`, y ese atributo es
+justamente lo que activa la lógica de idioma de `main.js`: sin él, el script no
+toca ni el `lang` ni los `placeholder` (ver "Notas de mantenimiento").
+
+Desde 2026-09-23 las páginas en inglés usan además nombres de archivo en inglés
+(`en/services.html`, `en/method.html`, `en/process.html`, `en/about.html`,
+`en/contact.html`, `en/legal-notice.html`, `en/privacy.html`; `en/index.html` y
+`en/cookies.html` no cambian). Las rutas antiguas (`/en/servicios`, `/en/metodo`…)
+siguen funcionando con redirecciones 301 declaradas en `_redirects`.
 
 ### El script inline y su hash (solo en `404.html`)
 
@@ -174,16 +195,22 @@ bloquea y el idioma parpadea al cargar. En PowerShell:
 - Fuentes propias en `fonts/` (IBM Plex Sans, latin y latin-ext). No hay
   peticiones a Google.
 - `main.js` gestiona el menú móvil, el formulario y el año del pie en todas
-  las páginas. En `404.html` además gestiona el selector de idioma por JS
-  (ver arriba); en el resto de páginas ese código queda inerte porque ya no
-  hay ningún elemento `[data-lang-toggle]` que lo dispare.
+  las páginas. La lógica de idioma (detección, selector EN/ES y sustitución de
+  los `placeholder`) **solo se ejecuta en las páginas que lo piden**: las que
+  llevan el atributo `data-lang` en `<html>`, que hoy es únicamente `404.html`.
+  En el resto no se ejecuta en absoluto, a propósito: son URLs de un solo
+  idioma y tienen que conservar el `lang` y los textos con los que se sirven.
+  Antes esa lógica corría en todas las páginas y sobrescribía `<html lang>` con
+  el idioma del navegador, así que una página española se marcaba como `lang="en"`
+  ante un navegador en inglés (incluido el de Google). Si alguna vez se añade
+  otra página bilingüe, basta con darle `data-lang` en `<html>`.
 - Textos bilingües: solo en `404.html`, cada texto va en dos `<span>`,
   `lang-es` y `lang-en`. En el resto de páginas cada idioma es un fichero
   aparte con un solo texto por línea (ver "Estructura de idiomas" arriba).
 - Al añadir o editar contenido en una página de las 9, hay que replicar el
-  cambio en su pareja de idioma (`archivo.html` ↔ `en/archivo.html`) y, si
-  cambia sustancialmente, actualizar su `<lastmod>` en `sitemap.xml` para
-  ambas URLs.
+  cambio en su pareja de idioma (`servicios.html` ↔ `en/services.html`,
+  `nosotros.html` ↔ `en/about.html`, etc.) y, si cambia sustancialmente,
+  actualizar su `<lastmod>` en `sitemap.xml` para ambas URLs.
 
 ## Pendiente
 

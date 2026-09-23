@@ -4,26 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Contacto | OPEX</title>
-  <meta name="description" content="Cuéntanos qué necesitas. Te respondemos con una propuesta clara.">
+  <meta name="description" content="Solicita un diagnóstico sin coste. Respondemos en 1 o 2 días laborables.">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta property="og:title" content="Contacto | OPEX">
-  <meta property="og:description" content="Cuéntanos qué necesitas. Te respondemos con una propuesta clara.">
+  <meta property="og:description" content="Solicita un diagnóstico sin coste. Respondemos en 1 o 2 días laborables.">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://www.opexxai.info/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.opexxai.info/og-image.png">
   <link rel="canonical" href="https://www.opexxai.info/contacto">
   <meta property="og:url" content="https://www.opexxai.info/contacto">
   <link rel="alternate" hreflang="es" href="https://www.opexxai.info/contacto">
-  <link rel="alternate" hreflang="en" href="https://www.opexxai.info/en/contacto">
+  <link rel="alternate" hreflang="en" href="https://www.opexxai.info/en/contact">
   <link rel="alternate" hreflang="x-default" href="https://www.opexxai.info/contacto">
   <link rel="preload" href="fonts/ibm-plex-sans-var-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="fonts.css?v=20260913">
-  <link rel="stylesheet" href="styles.css?v=20260913">
+  <link rel="stylesheet" href="styles.css?v=20260923">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "OPEX",
+    "description": "Consultoría de digitalización, automatización e infraestructura para empresas.",
     "url": "https://www.opexxai.info/contacto",
     "founder": {
       "@type": "Person",
@@ -36,6 +42,7 @@
     },
     "email": "info.opex@opexxai.info",
     "areaServed": "ES",
+    "knowsLanguage": ["es", "ca", "en", "it"],
     "sameAs": ["https://www.linkedin.com/in/theo-fern%C3%A1ndez/"]
   }
   </script>
@@ -57,8 +64,8 @@
         </ul>
       </nav>
       <div class="site-header__actions">
-        <a class="lang-switch" href="/en/contacto">EN</a>
-        <a class="btn btn--primary btn--sm" href="/contacto">Contactar</a>
+        <a class="lang-switch" href="/en/contact">EN</a>
+        <a class="btn btn--primary btn--sm" href="/contacto">Solicitar diagnóstico</a>
         <button class="menu-toggle" type="button" aria-label="Menú" aria-expanded="false" aria-controls="mobile-nav">
           <span></span><span></span><span></span>
         </button>
@@ -73,8 +80,8 @@
         <li><a href="/nosotros">Nosotros</a></li>
         <li><a href="/contacto" class="is-active" aria-current="page">Contacto</a></li>
       </ul>
-      <a class="btn btn--primary" href="/contacto">Contactar</a>
-      <a class="lang-switch" href="/en/contacto">EN</a>
+      <a class="btn btn--primary" href="/contacto">Solicitar diagnóstico</a>
+      <a class="lang-switch" href="/en/contact">EN</a>
     </nav>
   </header>
 
@@ -83,8 +90,7 @@
     <div class="container">
       <h1>Contacto</h1>
       <p class="page-header__lead">
-        Escríbenos y te respondemos con una propuesta clara. Si encaja, agendamos una primera conversación.
-        
+        Cuéntanos qué te gustaría mejorar. Respondemos en 1 o 2 días laborables y, si encaja, agendamos el diagnóstico sin coste: una sesión presencial en Barcelona o por videollamada.
       </p>
     </div>
   </section>
@@ -94,46 +100,90 @@
       <div class="contact">
         <div>
           <div class="form__message form__message--success" role="status" aria-live="polite">
-            <strong>Gracias.</strong> Hemos recibido tu mensaje y te responderemos pronto.
-            
+            <strong>Gracias.</strong> Hemos recibido tu solicitud y te responderemos en 1 o 2 días laborables.
           </div>
           <div class="form__message form__message--error" role="alert" aria-live="assertive">
             No hemos podido enviar el mensaje. Escríbenos directamente a <a href="mailto:info.opex@opexxai.info">info.opex@opexxai.info</a>.
-            
+
           </div>
           <form class="form" data-contact-form method="POST" action="https://api.web3forms.com/submit">
             <input type="hidden" name="access_key" value="60712082-a981-4d7a-b58b-b29049b5e92a">
-            <input type="hidden" name="subject" value="Nuevo mensaje desde la web de OPEX">
+            <input type="hidden" name="subject" value="Nueva solicitud de diagnóstico — web OPEX">
             <input type="hidden" name="from_name" value="Web OPEX">
             <input type="hidden" name="redirect" value="https://www.opexxai.info/contacto?enviado=1">
             <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
             <div class="form__field">
               <label for="nombre">Nombre</label>
               <input type="text" id="nombre" name="nombre" autocomplete="name" required
-                     data-ph-es="Tu nombre" data-ph-en="Your name" placeholder="Tu nombre">
+                     placeholder="Tu nombre">
             </div>
             <div class="form__field">
               <label for="negocio">Empresa</label>
               <input type="text" id="negocio" name="negocio" autocomplete="organization"
-                     data-ph-es="El nombre de tu empresa" data-ph-en="Your company name" placeholder="El nombre de tu empresa">
+                     placeholder="El nombre de tu empresa">
             </div>
             <div class="form__field">
               <label for="email">Email</label>
               <input type="email" id="email" name="email" autocomplete="email" required
-                     data-ph-es="Para poder responderte" data-ph-en="So we can reply" placeholder="Para poder responderte">
+                     placeholder="Para poder responderte">
             </div>
+            <div class="form__row">
+              <div class="form__field">
+                <label for="sector">Sector</label>
+                <input type="text" id="sector" name="sector"
+                       placeholder="Ej.: hostelería, industria">
+              </div>
+              <div class="form__field">
+                <label for="equipo">Tamaño del equipo</label>
+                <select id="equipo" name="equipo">
+                  <option value="">Selecciona una opción</option>
+                  <option>1–5 personas</option>
+                  <option>6–20 personas</option>
+                  <option>21–50 personas</option>
+                  <option>Más de 50 personas</option>
+                </select>
+              </div>
+            </div>
+            <fieldset class="form__field form__fieldset">
+              <legend>¿Qué te gustaría mejorar?</legend>
+              <p class="form__hint">Puedes marcar varias opciones.</p>
+              <div class="form__checks">
+                <label class="form__check">
+                  <input type="checkbox" name="mejorar_procesos" value="Procesos manuales y papeleo">
+                  <span>Procesos manuales y papeleo</span>
+                </label>
+                <label class="form__check">
+                  <input type="checkbox" name="mejorar_facturacion" value="Facturación">
+                  <span>Facturación</span>
+                </label>
+                <label class="form__check">
+                  <input type="checkbox" name="mejorar_automatizacion" value="Automatización e IA">
+                  <span>Automatización e IA</span>
+                </label>
+                <label class="form__check">
+                  <input type="checkbox" name="mejorar_infraestructura" value="Infraestructura, nube y correo">
+                  <span>Infraestructura, nube y correo</span>
+                </label>
+                <label class="form__check">
+                  <input type="checkbox" name="mejorar_web" value="Web">
+                  <span>Web</span>
+                </label>
+                <label class="form__check">
+                  <input type="checkbox" name="mejorar_otro" value="Otro">
+                  <span>Otro</span>
+                </label>
+              </div>
+            </fieldset>
             <div class="form__field">
               <label for="mensaje">Mensaje</label>
               <textarea id="mensaje" name="mensaje" rows="5" required
-                        data-ph-es="Cuéntanos brevemente qué hace tu empresa y qué te gustaría mejorar."
-                        data-ph-en="Tell us briefly what your company does and what you would like to improve."
-                        placeholder="Cuéntanos brevemente qué hace tu empresa y qué te gustaría mejorar."></textarea>
+                        placeholder="Cómo funciona hoy y qué te gustaría cambiar"></textarea>
             </div>
             <div class="h-captcha" data-captcha="true"></div>
-            <button class="btn btn--primary" type="submit">Enviar mensaje</button>
+            <button class="btn btn--primary" type="submit">Solicitar diagnóstico</button>
             <p class="form__note">
               Al enviar el formulario aceptas nuestra <a href="/privacidad">política de privacidad</a>.
-              
+
             </p>
           </form>
         </div>
@@ -146,6 +196,8 @@
             <dd>Barcelona, España</dd>
             <dt>Horario</dt>
             <dd>De lunes a viernes. Respondemos en 1 o 2 días laborables.</dd>
+            <dt>Idiomas</dt>
+            <dd>Español, català, English, italiano.</dd>
           </dl>
         </aside>
       </div>
@@ -158,10 +210,7 @@
       <div class="site-footer__grid">
         <div class="site-footer__brand">
           <span class="logo">OPEX</span>
-          <p>
-            Estudio digital en Barcelona. Diseño web y automatización de procesos para negocios.
-            
-          </p>
+          <p>Consultoría de digitalización, automatización e infraestructura para empresas. Barcelona.</p>
         </div>
         <div class="site-footer__col">
           <p class="footer-heading">Navegación</p>
@@ -175,7 +224,7 @@
           </ul>
         </div>
         <div class="site-footer__col">
-          <p class="footer-heading">Estudio</p>
+          <p class="footer-heading">Sobre OPEX</p>
           <ul>
             <li><a href="/nosotros">Quiénes somos</a></li>
             <li><a href="/metodo">El Método OPEX</a></li>
@@ -197,13 +246,13 @@
           <li><a href="/aviso-legal">Aviso legal</a></li>
           <li><a href="/privacidad">Privacidad</a></li>
           <li><a href="/cookies">Cookies</a></li>
-          <li><a class="lang-switch" href="/en/contacto">EN</a></li>
+          <li><a class="lang-switch" href="/en/contact">EN</a></li>
         </ul>
       </div>
     </div>
   </footer>
 
-  <script src="main.js?v=20260919" defer></script>
+  <script src="main.js?v=20260923" defer></script>
   <script src="https://web3forms.com/client/script.js" async defer></script>
 </body>
 </html>

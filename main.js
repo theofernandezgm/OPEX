@@ -68,11 +68,15 @@
     applyLang(lang);
   }
 
-  applyLang(getLang());
+  /* Only the bilingual 404 page opts in (it ships <html data-lang>). Every other
+     page is a single-language URL (ES at the root, EN under /en/) and must keep
+     the lang attribute and placeholders it was served with. */
+  var bilingual = root.hasAttribute("data-lang");
+  if (bilingual) applyLang(getLang());
 
   document.addEventListener("click", function (e) {
     var t = e.target.closest("[data-lang-toggle]");
-    if (!t) return;
+    if (!t || !bilingual) return;
     setLang(root.getAttribute("data-lang") === "es" ? "en" : "es");
   });
 
@@ -123,7 +127,7 @@
         successBox.classList.add("is-visible");
         successBox.scrollIntoView({ block: "center" });
       }
-      var controls = form.querySelectorAll("input, textarea, button");
+      var controls = form.querySelectorAll("input, select, textarea, button");
       for (var i = 0; i < controls.length; i++) {
         controls[i].setAttribute("disabled", "true");
       }

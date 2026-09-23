@@ -8,3 +8,13 @@
 /README.md            /404.html   404
 /.gitignore           /404.html   404
 /.gitattributes        /404.html    404
+
+# English pages moved to English URLs (2026-09-23). Permanent redirects so the
+# old paths, and anything already linking to them, keep working.
+/en/servicios     /en/services      301
+/en/metodo        /en/method        301
+/en/proceso       /en/process       301
+/en/nosotros      /en/about         301
+/en/contacto      /en/contact       301
+/en/aviso-legal   /en/legal-notice  301
+/en/privacidad    /en/privacy       301
