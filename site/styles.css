@@ -1565,7 +1565,7 @@ h4 {
    block is a photo (body.photo-top); without JS it stays solid. */
 .photo-top .site-header {
   background: var(--color-primary);
-  border-bottom-color: transparent;
+  border-bottom: 0;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -1586,12 +1586,12 @@ h4 {
 }
 
 .photo-top main > .has-photo:first-child {
-  margin-top: calc(-1 * var(--header-height));
-  padding-top: calc(var(--header-height) + 96px);
+  margin-top: calc(-1 * var(--header-height) - 16px);
+  padding-top: calc(var(--header-height) + 112px);
 }
 
 .photo-top main > .hero.has-photo:first-child {
-  padding-top: calc(var(--header-height) + 128px);
+  padding-top: calc(var(--header-height) + 144px);
 }
 
 .photo-top .logo,
@@ -1817,7 +1817,7 @@ html.blueprint::after {
   }
 
   .photo-top main > .hero.has-photo:first-child {
-    padding-top: calc(var(--header-height) + 56px);
+    padding-top: calc(var(--header-height) + 72px);
   }
 
   .page-header.has-photo {
@@ -1825,7 +1825,7 @@ html.blueprint::after {
   }
 
   .photo-top main > .has-photo:first-child {
-    padding-top: calc(var(--header-height) + 48px);
+    padding-top: calc(var(--header-height) + 64px);
   }
 
   .band,
