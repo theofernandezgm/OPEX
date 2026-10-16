@@ -140,4 +140,18 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.opexxai.info/en/services/ongoing-support"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.opexxai.info/servicios/soporte-continuo"/>
   </url>
+  <url>
+    <loc>https://www.opexxai.info/servicios/automatizacion-procesos</loc>
+    <lastmod>2026-10-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.opexxai.info/servicios/automatizacion-procesos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.opexxai.info/en/services/process-automation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.opexxai.info/servicios/automatizacion-procesos"/>
+  </url>
+  <url>
+    <loc>https://www.opexxai.info/en/services/process-automation</loc>
+    <lastmod>2026-10-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.opexxai.info/servicios/automatizacion-procesos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.opexxai.info/en/services/process-automation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.opexxai.info/servicios/automatizacion-procesos"/>
+  </url>
 </urlset>
