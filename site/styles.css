@@ -1402,6 +1402,14 @@ h4 {
   will-change: transform;
 }
 
+/* Shorter sections need more spare image for the same visible movement. */
+.page-header .photo-bg__img,
+.band .photo-bg__img,
+.cta .photo-bg__img {
+  top: -40%;
+  height: 180%;
+}
+
 .photo-bg::after {
   content: "";
   position: absolute;

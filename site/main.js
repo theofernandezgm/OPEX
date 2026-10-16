@@ -214,8 +214,13 @@
       var box = img.parentNode.getBoundingClientRect();
       if (!on) { img.style.transform = ""; continue; }
       if (box.bottom < -200 || box.top > vh + 200) continue;
-      var offset = (box.top + box.height / 2) - vh / 2;
-      img.style.transform = "translate3d(0," + (offset * -0.22).toFixed(1) + "px,0)";
+      /* Progress from -1 (section entering at the bottom) to 1 (leaving at the
+         top), and never move further than the spare image above and below the
+         section, so the photo's edge can never show. */
+      var spare = Math.max(0, (img.offsetHeight - box.height) / 2) * 0.92;
+      var progress = ((box.top + box.height / 2) - vh / 2) / ((vh + box.height) / 2);
+      progress = Math.max(-1, Math.min(1, progress));
+      img.style.transform = "translate3d(0," + (progress * -spare).toFixed(1) + "px,0)";
     }
   }
 
