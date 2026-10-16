@@ -1859,3 +1859,98 @@ html.blueprint::after {
     transform: none;
   }
 }
+
+/* 2026-10-16 SEO pass: service detail pages. */
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 0;
+  margin-bottom: 18px;
+  list-style: none;
+  font-size: 14px;
+}
+
+.breadcrumb li + li::before {
+  content: "/";
+  margin: 0 10px;
+  opacity: 0.6;
+}
+
+.breadcrumb a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.has-photo .breadcrumb {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.has-photo .breadcrumb [aria-current] {
+  color: #fff;
+}
+
+.card-grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card h3 a {
+  color: var(--color-text);
+}
+
+.card h3 a:hover {
+  color: var(--color-primary);
+}
+
+.service__body h2 a {
+  color: inherit;
+}
+
+.faq {
+  max-width: 820px;
+  border-top: 1px solid var(--color-border);
+}
+
+.faq__item {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.faq__item summary {
+  position: relative;
+  padding: 20px 40px 20px 0;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq__item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq__item summary::after {
+  content: "+";
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--color-primary);
+}
+
+.faq__item[open] summary::after {
+  content: "\2212";
+}
+
+.faq__item p {
+  padding: 0 0 22px;
+  max-width: 720px;
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 960px) {
+  .card-grid--3 {
+    grid-template-columns: 1fr;
+  }
+}

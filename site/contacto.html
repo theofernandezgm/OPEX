@@ -3,14 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contacto | OPEX</title>
-  <meta name="description" content="Solicita un diagnóstico sin coste. Respondemos en 1 o 2 días laborables.">
+  <title>Contacto: solicita un diagnóstico sin coste | OPEX Systems</title>
+  <meta name="description" content="Cuéntanos qué te gustaría mejorar en tu empresa. Respondemos en 1 o 2 días laborables y agendamos un diagnóstico sin coste, en Barcelona o por videollamada.">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="Contacto | OPEX">
-  <meta property="og:description" content="Solicita un diagnóstico sin coste. Respondemos en 1 o 2 días laborables.">
+  <meta property="og:title" content="Contacto: solicita un diagnóstico sin coste | OPEX Systems">
+  <meta property="og:description" content="Cuéntanos qué te gustaría mejorar en tu empresa. Respondemos en 1 o 2 días laborables y agendamos un diagnóstico sin coste, en Barcelona o por videollamada.">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="OPEX Systems">
+  <meta property="og:locale" content="es_ES">
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:image" content="https://www.opexxai.info/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -23,28 +25,128 @@
   <link rel="alternate" hreflang="x-default" href="https://www.opexxai.info/contacto">
   <link rel="preload" href="fonts/ibm-plex-sans-var-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="fonts.css?v=20260913">
-  <link rel="stylesheet" href="styles.css?v=20261016b">
+  <link rel="stylesheet" href="styles.css?v=20261016c">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "OPEX",
-    "description": "Consultoría de digitalización, automatización e infraestructura para empresas.",
-    "url": "https://www.opexxai.info/contacto",
-    "founder": {
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://www.opexxai.info/#organization",
+      "name": "OPEX Systems",
+      "alternateName": "OPEX",
+      "url": "https://www.opexxai.info/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.opexxai.info/img/logo-opex.png",
+        "width": 512,
+        "height": 512
+      },
+      "image": "https://www.opexxai.info/og-image.png",
+      "description": "Consultoría de digitalización, automatización e infraestructura para empresas en Barcelona.",
+      "email": "info.opex@opexxai.info",
+      "foundingDate": "2025",
+      "founder": {
+        "@id": "https://www.opexxai.info/nosotros#theo"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Barcelona",
+        "addressRegion": "Cataluña",
+        "addressCountry": "ES"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Barcelona"
+        },
+        {
+          "@type": "Country",
+          "name": "España"
+        }
+      ],
+      "knowsLanguage": [
+        "es",
+        "ca",
+        "en",
+        "it"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/company/opexsystems",
+        "https://x.com/opexspain"
+      ]
+    },
+    {
       "@type": "Person",
-      "name": "Theo Fern\u00e1ndez"
+      "@id": "https://www.opexxai.info/nosotros#theo",
+      "name": "Theo Fernández",
+      "jobTitle": "Fundador",
+      "worksFor": {
+        "@id": "https://www.opexxai.info/#organization"
+      },
+      "url": "https://www.opexxai.info/nosotros",
+      "image": "https://www.opexxai.info/img/theo-fernandez.jpg",
+      "sameAs": [
+        "https://www.linkedin.com/in/theo-fern%C3%A1ndez/"
+      ],
+      "knowsLanguage": [
+        "es",
+        "ca",
+        "en",
+        "it"
+      ]
     },
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Barcelona",
-      "addressCountry": "ES"
+    {
+      "@type": "WebSite",
+      "@id": "https://www.opexxai.info/#website",
+      "url": "https://www.opexxai.info/",
+      "name": "OPEX Systems",
+      "alternateName": "OPEX",
+      "publisher": {
+        "@id": "https://www.opexxai.info/#organization"
+      },
+      "inLanguage": [
+        "es",
+        "en"
+      ]
     },
-    "email": "info.opex@opexxai.info",
-    "areaServed": "ES",
-    "knowsLanguage": ["es", "ca", "en", "it"],
-    "sameAs": ["https://www.linkedin.com/in/theo-fern%C3%A1ndez/"]
-  }
+    {
+      "@type": "ContactPage",
+      "@id": "https://www.opexxai.info/contacto#webpage",
+      "url": "https://www.opexxai.info/contacto",
+      "name": "Contacto: solicita un diagnóstico sin coste | OPEX Systems",
+      "description": "Cuéntanos qué te gustaría mejorar en tu empresa. Respondemos en 1 o 2 días laborables y agendamos un diagnóstico sin coste, en Barcelona o por videollamada.",
+      "inLanguage": "es",
+      "isPartOf": {
+        "@id": "https://www.opexxai.info/#website"
+      },
+      "about": {
+        "@id": "https://www.opexxai.info/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://www.opexxai.info/contacto#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.opexxai.info/contacto#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://www.opexxai.info/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Contacto",
+          "item": "https://www.opexxai.info/contacto"
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body class="photo-top">
@@ -225,11 +327,12 @@
           </ul>
         </div>
         <div class="site-footer__col">
-          <p class="footer-heading">Sobre OPEX</p>
+          <p class="footer-heading">Servicios</p>
           <ul>
-            <li><a href="/nosotros">Quiénes somos</a></li>
-            <li><a href="/metodo">El Método OPEX</a></li>
-            <li><a href="/proceso">Cómo trabajamos</a></li>
+            <li><a href="/servicios/digitalizacion-automatizacion">Digitalización y automatización</a></li>
+            <li><a href="/servicios/infraestructura-nube">Infraestructura y nube</a></li>
+            <li><a href="/servicios/diseno-web">Diseño y desarrollo web</a></li>
+            <li><a href="/servicios/soporte-continuo">Soporte continuo</a></li>
           </ul>
         </div>
         <div class="site-footer__col">
@@ -253,7 +356,7 @@
     </div>
   </footer>
 
-  <script src="main.js?v=20261016" defer></script>
+  <script src="main.js?v=20261016c" defer></script>
   <script src="https://web3forms.com/client/script.js" async defer></script>
 </body>
 </html>

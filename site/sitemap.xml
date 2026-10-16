@@ -1,21 +1,143 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.opexxai.info/</loc><lastmod>2026-10-16</lastmod></url>
-  <url><loc>https://www.opexxai.info/servicios</loc><lastmod>2026-10-16</lastmod></url>
-  <url><loc>https://www.opexxai.info/metodo</loc><lastmod>2026-10-16</lastmod></url>
-  <url><loc>https://www.opexxai.info/proceso</loc><lastmod>2026-10-16</lastmod></url>
-  <url><loc>https://www.opexxai.info/nosotros</loc><lastmod>2026-10-16</lastmod></url>
-  <url><loc>https://www.opexxai.info/contacto</loc><lastmod>2026-10-16</lastmod></url>
-  <url><loc>https://www.opexxai.info/aviso-legal</loc><lastmod>2026-09-23</lastmod></url>
-  <url><loc>https://www.opexxai.info/privacidad</loc><lastmod>2026-09-23</lastmod></url>
-  <url><loc>https://www.opexxai.info/cookies</loc><lastmod>2026-09-23</lastmod></url>
-  <url><loc>https://www.opexxai.info/en/</loc><lastmod>2026-10-16</lastmod></url>
-  <url><loc>https://www.opexxai.info/en/services</loc><lastmod>2026-10-16</lastmod></url>
-  <url><loc>https://www.opexxai.info/en/method</loc><lastmod>2026-10-16</lastmod></url>
-  <url><loc>https://www.opexxai.info/en/process</loc><lastmod>2026-10-16</lastmod></url>
-  <url><loc>https://www.opexxai.info/en/about</loc><lastmod>2026-10-16</lastmod></url>
-  <url><loc>https://www.opexxai.info/en/contact</loc><lastmod>2026-10-16</lastmod></url>
-  <url><loc>https://www.opexxai.info/en/legal-notice</loc><lastmod>2026-09-23</lastmod></url>
-  <url><loc>https://www.opexxai.info/en/privacy</loc><lastmod>2026-09-23</lastmod></url>
-  <url><loc>https://www.opexxai.info/en/cookies</loc><lastmod>2026-09-23</lastmod></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.opexxai.info/</loc>
+    <lastmod>2026-10-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.opexxai.info/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.opexxai.info/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.opexxai.info/"/>
+  </url>
+  <url>
+    <loc>https://www.opexxai.info/servicios</loc>
+    <lastmod>2026-10-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.opexxai.info/servicios"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.opexxai.info/en/services"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.opexxai.info/servicios"/>
+  </url>
+  <url>
+    <loc>https://www.opexxai.info/metodo</loc>
+    <lastmod>2026-10-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.opexxai.info/metodo"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.opexxai.info/en/method"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.opexxai.info/metodo"/>
+  </url>
+  <url>
+    <loc>https://www.opexxai.info/proceso</loc>
+    <lastmod>2026-10-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.opexxai.info/proceso"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.opexxai.info/en/process"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.opexxai.info/proceso"/>
+  </url>
+  <url>
+    <loc>https://www.opexxai.info/nosotros</loc>
+    <lastmod>2026-10-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.opexxai.info/nosotros"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.opexxai.info/en/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.opexxai.info/nosotros"/>
+  </url>
+  <url>
+    <loc>https://www.opexxai.info/contacto</loc>
+    <lastmod>2026-10-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.opexxai.info/contacto"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.opexxai.info/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.opexxai.info/contacto"/>
+  </url>
+  <url>
+    <loc>https://www.opexxai.info/en/</loc>
+    <lastmod>2026-10-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.opexxai.info/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.opexxai.info/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.opexxai.info/"/>
+  </url>
+  <url>
+    <loc>https://www.opexxai.info/en/services</loc>
+    <lastmod>2026-10-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.opexxai.info/servicios"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.opexxai.info/en/services"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.opexxai.info/servicios"/>
+  </url>
+  <url>
+    <loc>https://www.opexxai.info/en/method</loc>
+    <lastmod>2026-10-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.opexxai.info/metodo"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.opexxai.info/en/method"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.opexxai.info/metodo"/>
+  </url>
+  <url>
+    <loc>https://www.opexxai.info/en/process</loc>
+    <lastmod>2026-10-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.opexxai.info/proceso"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.opexxai.info/en/process"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.opexxai.info/proceso"/>
+  </url>
+  <url>
+    <loc>https://www.opexxai.info/en/about</loc>
+    <lastmod>2026-10-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.opexxai.info/nosotros"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.opexxai.info/en/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.opexxai.info/nosotros"/>
+  </url>
+  <url>
+    <loc>https://www.opexxai.info/en/contact</loc>
+    <lastmod>2026-10-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.opexxai.info/contacto"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.opexxai.info/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.opexxai.info/contacto"/>
+  </url>
+  <url>
+    <loc>https://www.opexxai.info/servicios/digitalizacion-automatizacion</loc>
+    <lastmod>2026-10-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.opexxai.info/servicios/digitalizacion-automatizacion"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.opexxai.info/en/services/digitisation-automation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.opexxai.info/servicios/digitalizacion-automatizacion"/>
+  </url>
+  <url>
+    <loc>https://www.opexxai.info/en/services/digitisation-automation</loc>
+    <lastmod>2026-10-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.opexxai.info/servicios/digitalizacion-automatizacion"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.opexxai.info/en/services/digitisation-automation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.opexxai.info/servicios/digitalizacion-automatizacion"/>
+  </url>
+  <url>
+    <loc>https://www.opexxai.info/servicios/infraestructura-nube</loc>
+    <lastmod>2026-10-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.opexxai.info/servicios/infraestructura-nube"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.opexxai.info/en/services/infrastructure-cloud"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.opexxai.info/servicios/infraestructura-nube"/>
+  </url>
+  <url>
+    <loc>https://www.opexxai.info/en/services/infrastructure-cloud</loc>
+    <lastmod>2026-10-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.opexxai.info/servicios/infraestructura-nube"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.opexxai.info/en/services/infrastructure-cloud"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.opexxai.info/servicios/infraestructura-nube"/>
+  </url>
+  <url>
+    <loc>https://www.opexxai.info/servicios/diseno-web</loc>
+    <lastmod>2026-10-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.opexxai.info/servicios/diseno-web"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.opexxai.info/en/services/web-design"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.opexxai.info/servicios/diseno-web"/>
+  </url>
+  <url>
+    <loc>https://www.opexxai.info/en/services/web-design</loc>
+    <lastmod>2026-10-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.opexxai.info/servicios/diseno-web"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.opexxai.info/en/services/web-design"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.opexxai.info/servicios/diseno-web"/>
+  </url>
+  <url>
+    <loc>https://www.opexxai.info/servicios/soporte-continuo</loc>
+    <lastmod>2026-10-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.opexxai.info/servicios/soporte-continuo"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.opexxai.info/en/services/ongoing-support"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.opexxai.info/servicios/soporte-continuo"/>
+  </url>
+  <url>
+    <loc>https://www.opexxai.info/en/services/ongoing-support</loc>
+    <lastmod>2026-10-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.opexxai.info/servicios/soporte-continuo"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.opexxai.info/en/services/ongoing-support"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.opexxai.info/servicios/soporte-continuo"/>
+  </url>
 </urlset>

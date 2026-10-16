@@ -296,7 +296,7 @@
       if (railTargets[i].getBoundingClientRect().top <= line) current = i;
     }
     var lastBox = railTargets[railTargets.length - 1].getBoundingClientRect();
-    var visible = railTargets[0].getBoundingClientRect().top < vh * 0.7 && lastBox.bottom > vh * 0.3;
+    var visible = railTargets[0].getBoundingClientRect().top < vh * 0.35 && lastBox.bottom > vh * 0.3;
     rail.classList.toggle("is-visible", visible);
     for (var j = 0; j < railItems.length; j++) {
       railItems[j].classList.toggle("is-current", j === current);

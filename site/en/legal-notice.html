@@ -3,14 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Legal notice | OPEX</title>
+  <title>Legal notice | OPEX Systems</title>
   <meta name="description" content="OPEX legal notice.">
+  <meta name="robots" content="noindex, follow">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="Legal notice | OPEX">
+  <meta property="og:title" content="Legal notice | OPEX Systems">
   <meta property="og:description" content="OPEX legal notice.">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="OPEX Systems">
+  <meta property="og:locale" content="en_GB">
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:image" content="https://www.opexxai.info/og-image-en.png">
   <meta property="og:image:width" content="1200">
@@ -23,28 +26,128 @@
   <link rel="alternate" hreflang="x-default" href="https://www.opexxai.info/aviso-legal">
   <link rel="preload" href="/fonts/ibm-plex-sans-var-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/fonts.css?v=20260913">
-  <link rel="stylesheet" href="/styles.css?v=20261016b">
+  <link rel="stylesheet" href="/styles.css?v=20261016c">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "OPEX",
-    "description": "Digitisation, automation and infrastructure consultancy for businesses.",
-    "url": "https://www.opexxai.info/en/legal-notice",
-    "founder": {
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://www.opexxai.info/#organization",
+      "name": "OPEX Systems",
+      "alternateName": "OPEX",
+      "url": "https://www.opexxai.info/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.opexxai.info/img/logo-opex.png",
+        "width": 512,
+        "height": 512
+      },
+      "image": "https://www.opexxai.info/og-image-en.png",
+      "description": "Digitisation, automation and IT infrastructure consultancy for businesses in Barcelona, Spain.",
+      "email": "info.opex@opexxai.info",
+      "foundingDate": "2025",
+      "founder": {
+        "@id": "https://www.opexxai.info/nosotros#theo"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Barcelona",
+        "addressRegion": "Cataluña",
+        "addressCountry": "ES"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Barcelona"
+        },
+        {
+          "@type": "Country",
+          "name": "Spain"
+        }
+      ],
+      "knowsLanguage": [
+        "es",
+        "ca",
+        "en",
+        "it"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/company/opexsystems",
+        "https://x.com/opexspain"
+      ]
+    },
+    {
       "@type": "Person",
-      "name": "Theo Fern\u00e1ndez"
+      "@id": "https://www.opexxai.info/nosotros#theo",
+      "name": "Theo Fernández",
+      "jobTitle": "Founder",
+      "worksFor": {
+        "@id": "https://www.opexxai.info/#organization"
+      },
+      "url": "https://www.opexxai.info/en/about",
+      "image": "https://www.opexxai.info/img/theo-fernandez.jpg",
+      "sameAs": [
+        "https://www.linkedin.com/in/theo-fern%C3%A1ndez/"
+      ],
+      "knowsLanguage": [
+        "es",
+        "ca",
+        "en",
+        "it"
+      ]
     },
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Barcelona",
-      "addressCountry": "ES"
+    {
+      "@type": "WebSite",
+      "@id": "https://www.opexxai.info/#website",
+      "url": "https://www.opexxai.info/",
+      "name": "OPEX Systems",
+      "alternateName": "OPEX",
+      "publisher": {
+        "@id": "https://www.opexxai.info/#organization"
+      },
+      "inLanguage": [
+        "es",
+        "en"
+      ]
     },
-    "email": "info.opex@opexxai.info",
-    "areaServed": "ES",
-    "knowsLanguage": ["es", "ca", "en", "it"],
-    "sameAs": ["https://www.linkedin.com/in/theo-fern%C3%A1ndez/"]
-  }
+    {
+      "@type": "WebPage",
+      "@id": "https://www.opexxai.info/en/legal-notice#webpage",
+      "url": "https://www.opexxai.info/en/legal-notice",
+      "name": "Legal notice | OPEX Systems",
+      "description": "OPEX legal notice.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://www.opexxai.info/#website"
+      },
+      "about": {
+        "@id": "https://www.opexxai.info/#organization"
+      },
+      "breadcrumb": {
+        "@id": "https://www.opexxai.info/en/legal-notice#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.opexxai.info/en/legal-notice#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.opexxai.info/en/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Legal notice",
+          "item": "https://www.opexxai.info/en/legal-notice"
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>
@@ -138,11 +241,12 @@
           </ul>
         </div>
         <div class="site-footer__col">
-          <p class="footer-heading">About OPEX</p>
+          <p class="footer-heading">Services</p>
           <ul>
-            <li><a href="/en/about">About us</a></li>
-            <li><a href="/en/method">The OPEX Method</a></li>
-            <li><a href="/en/process">How we work</a></li>
+            <li><a href="/en/services/digitisation-automation">Digitisation and automation</a></li>
+            <li><a href="/en/services/infrastructure-cloud">Infrastructure and cloud</a></li>
+            <li><a href="/en/services/web-design">Web design and development</a></li>
+            <li><a href="/en/services/ongoing-support">Ongoing support</a></li>
           </ul>
         </div>
         <div class="site-footer__col">
@@ -166,6 +270,6 @@
     </div>
   </footer>
 
-  <script src="/main.js?v=20261016" defer></script>
+  <script src="/main.js?v=20261016c" defer></script>
 </body>
 </html>

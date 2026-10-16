@@ -81,6 +81,15 @@ funcionan.
 
 ## Archivos especiales
 
+- `opex.pages.dev` y las previsualizaciones `<rama>.opex.pages.dev` sirven una
+  copia completa del sitio. `_headers` les envía `X-Robots-Tag: noindex` (reglas
+  con `https://:project.pages.dev/*`), así que Google solo indexa
+  `www.opexxai.info`. No quitar esas reglas.
+- `styles.css` y `main.js` se cachean un año (`immutable`) porque siempre se
+  piden con `?v=`. **Cualquier cambio en ellos exige subir la versión** en todas
+  las páginas y en las líneas `Link` de `_headers`; si no, los navegadores
+  seguirán usando la copia antigua.
+
 - `_headers`: cabeceras de seguridad, caché y Early Hints. Pages lo aplica
   automáticamente. Las cabeceras `Link` de las páginas HTML hacen que Cloudflare
   envíe respuestas 103 y el navegador descargue CSS y fuente antes de recibir el HTML.

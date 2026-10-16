@@ -16,7 +16,8 @@ servirse. Las rutas de la tabla son relativas a `site/`:
 |---|---|
 | `index.html`, `servicios.html`, `metodo.html`, `proceso.html`, `nosotros.html`, `contacto.html` | Páginas principales (español) |
 | `aviso-legal.html`, `privacidad.html`, `cookies.html` | Páginas legales (español) |
-| `en/` | Las mismas nueve páginas en inglés, con nombres en inglés (`en/services.html`, `en/method.html`…) |
+| `servicios/` | Una página por servicio (`digitalizacion-automatizacion`, `infraestructura-nube`, `diseno-web`, `soporte-continuo`), servidas en `/servicios/<nombre>`. Usan rutas absolutas (`/styles.css`) |
+| `en/` | Las mismas páginas en inglés, con nombres en inglés (`en/services.html`, `en/method.html`…); los servicios en `en/services/` |
 | `404.html` | Página de error (Cloudflare la usa automáticamente). Única página bilingüe |
 | `styles.css` | Estilos del sitio |
 | `fonts.css`, `fonts/` | IBM Plex Sans, alojada en el propio sitio (sin peticiones a Google) |
@@ -44,8 +45,13 @@ Fuera de `site/`, en la raíz del repositorio y por tanto nunca públicos:
   script inline del `<head>` que aplica el idioma antes del primer pintado. Ese
   script es el único con hash sha256 en `_headers`; si lo editas hay que
   recalcularlo o la CSP lo bloquea (ver `DEPLOY.md`).
-- La cabecera y el pie están duplicados en las 19 páginas (9 en español, 9 en
-  inglés y `404.html`). Si cambias la navegación, aplícalo en las 19.
+- La cabecera y el pie están duplicados en las 27 páginas (13 en español, 13 en
+  inglés y `404.html`). Si cambias la navegación, aplícalo en las 27.
+- Nombre de marca en títulos, datos estructurados y Open Graph: **OPEX Systems**
+  (el logotipo sigue siendo "OPEX"). Cada página lleva su propio JSON-LD
+  (`@graph` con la organización, Theo, el sitio, la página y sus migas; los
+  servicios añaden `Service` y `FAQPage`).
+- Las páginas legales llevan `noindex, follow` y no están en `sitemap.xml`.
 - Las páginas se enlazan sin extensión (`/servicios`); Cloudflare Pages resuelve
   la ruta a `servicios.html`, y dentro de `en/` igual.
 - `styles.css`, `fonts.css` y `main.js` se enlazan con un parámetro de versión
