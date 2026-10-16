@@ -204,7 +204,7 @@
   var layers = Array.prototype.slice.call(document.querySelectorAll("[data-parallax]"));
 
   function parallaxOn() {
-    return !reduced() && window.innerWidth >= 768;
+    return !reduced();
   }
 
   function updateParallax(vh) {
