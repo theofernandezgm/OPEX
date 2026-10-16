@@ -1962,3 +1962,85 @@ html.blueprint::after {
     grid-template-columns: 1fr;
   }
 }
+
+/* 2026-10-16: links that read as links. */
+.text-link {
+  text-decoration: underline;
+  text-decoration-color: rgba(23, 74, 128, 0.35);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  transition: text-decoration-color 0.2s ease;
+}
+
+.text-link::after,
+.btn--arrow::after {
+  content: "\2192";
+  display: inline-block;
+  margin-left: 6px;
+  transition: transform 0.2s ease;
+}
+
+.text-link:hover {
+  text-decoration-color: currentColor;
+}
+
+.text-link:hover::after,
+.btn--arrow:hover::after {
+  transform: translateX(3px);
+}
+
+.service__body h2 a {
+  text-decoration: underline;
+  text-decoration-color: var(--color-border);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.service__body h2 a:hover {
+  color: var(--color-link);
+  text-decoration-color: currentColor;
+}
+
+/* Cards whose title is a link: the whole card is clickable. */
+.card:has(h3 a) {
+  position: relative;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card h3 a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.card:has(h3 a) h3::after {
+  content: " \2192";
+  color: var(--color-link);
+}
+
+.card:has(h3 a):hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 6px 18px rgba(10, 29, 50, 0.08);
+}
+
+.card:has(h3 a:focus-visible) {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.card h3 a:focus-visible {
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .text-link::after,
+  .btn--arrow::after {
+    transition: none;
+  }
+}
+
+/* Anchored sections land below the sticky header. */
+section[id] {
+  scroll-margin-top: calc(var(--header-height) + 8px);
+}
